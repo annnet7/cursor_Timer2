@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timer2</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        
+        .timeinput {
+            width: 50px;
+        }
+        
+        .loadLine {
+            height: 30px;
+            width: 100%;
+            background: linear-gradient(to right, red, yellow);
+        }
+        
+        #container {
+            width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" min="0" value="0" id="minInput" class="timeinput"> :
+    <input type="number" min="0" max="59" value="5" id="secInput" class="timeinput">
+    <input type="checkbox" id="autostartCB">
+    <label for="autostartCB">Autostart</label>
+    <button id="btnCrt">Create</button>
+    <div id="container"></div>
+    <script src="main.js"></script>
+</body>
+
+</html>
