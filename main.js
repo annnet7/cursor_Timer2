@@ -70,12 +70,23 @@ createBtn.addEventListener('click', function() {
     timeStrDiv.innerText = "00:00";
     let timeLineDiv = document.createElement('div');
     timeLineDiv.className = "loadLine";
+    let timeBtn = document.createElement('button');
     let contDiv = document.getElementById('container');
     contDiv.appendChild(timeStrDiv);
     contDiv.appendChild(timeLineDiv);
+    contDiv.appendChild(timeBtn);
 
     //создаем объект
     let t = new Timer(timeinSec, true, timeStrDiv, timeLineDiv);
     t.Autostart = autostartCB;
-
+    timeBtn.innerText = autostartCB ? "Stop" : "Start";
+    timeBtn.addEventListener('click', function() {
+        if (timeBtn.innerText == "Stop") {
+            t.stop();
+            timeBtn.innerText = "Start";
+        } else {
+            t.start();
+            timeBtn.innerText = "Stop";
+        }
+    })
 });
